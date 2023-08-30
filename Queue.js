@@ -23,7 +23,7 @@ class Queue{
 
   displayQueue(){
 
-    if(this.front == null){
+    if(this.front === null){
 
       console.log("The given Queue is Empty.");
 
@@ -47,11 +47,9 @@ class Queue{
 
   enqueue(data){
 
-    let newNode = new Node();
+    let newNode = new Node(data);
 
-    newNode.data = data;
-
-    if(this.rear ==null){
+    if(this.rear === null){
 
       this.rear = newNode;  // Setting the first Node as front and rear
       this.front = newNode; // Setting the first Node as front and rear
@@ -60,21 +58,25 @@ class Queue{
 
     }
 
+    // If the queue is not empty, add the new Node to the rear of the queue
     this.rear.next = newNode;
 
+    // Update the rear to be the new Node, making it the new last element in the queue
     this.rear = newNode;
 
   }
 
   dequeue(){
 
-    if(this.front == null){
+    if(this.front === null){
 
       console.log("The given Queue is Empty.");
 
       return;
 
     }
+
+    const removedElement = this.front.data;
 
     this.front = this.front.next;
 
@@ -84,7 +86,8 @@ class Queue{
 
     }
 
-    console.log("Removed an element from the Queue");
+    console.log("Removed element from the Queue:", removedElement);
+    return removedElement; // Return the removed element
 
   }
 
