@@ -41,13 +41,9 @@ class Stack{
 
     }
 
-    if(currentNode == null){
+    console.log("Finished Printing Stack");
 
-      console.log("Finished Printing Stack");
-
-      return;
-
-    }
+    return;
 
   }
 
@@ -71,21 +67,26 @@ class Stack{
   }
 
 
-  popFromStack(){
+  popFromStack() {
 
-    if(this.top == null){
+    if (this.top == null) {
 
       console.log("Stack Underflow");
+      return null; // Return null to indicate no value was popped.
 
-      return;
+    } else {
 
-    }else{
-
+      let poppedValue = this.top.data; // Store the popped value.
+      
       this.top = this.top.next;
+      
+      return poppedValue; // Return the popped value.
 
     }
 
   }
+
+}
 
 }
 
