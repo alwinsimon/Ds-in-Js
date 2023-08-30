@@ -103,7 +103,7 @@ class BinarySearchTree {
 
         }
 
-        return false;
+        return false; // The search data is not found in the tree.
 
     }
 
@@ -132,28 +132,28 @@ class BinarySearchTree {
         
             if (data === node.data) {
                 
-                // node has no children
+                // node has NO children
                 if (node.left === null && node.right === null) {
 
                     return null;
 
                 }
         
-                // node has one child
+                // node has RIGHT child
                 if (node.left === null) {
 
                     return node.right;
 
                 }
         
+                // node has LEFT child
                 if (node.right === null) {
 
                     return node.left;
 
                 }
         
-                // node has two children
-
+                // node has TWO children
                 let tempNode = findMinNode(node.right);
 
                 node.data = tempNode.data;
