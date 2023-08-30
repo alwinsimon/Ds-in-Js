@@ -31,12 +31,19 @@ class SinglyLinkedList {
       current = current.next;
     }
 
+    // Update the Tail node with the new tail
     this.tail = current;
-    return this.head;
+
+    // Return the Linked List
+    return this;
+
   }
 }
 
-  
+
+
+
+
 // Create a new singly linked list
 const myList = new SinglyLinkedList();
 
