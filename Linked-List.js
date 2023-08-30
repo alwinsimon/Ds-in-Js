@@ -47,12 +47,12 @@ class SLinkedList {
     while (temp != null) { // Iterate through the list
       console.log(temp.data + "=>"); // Print the data of each node
       temp = temp.next; // Move to the next node
-      
-      if (temp == null) { // If we have reached the end of the list, print a message
-        const result = "Completed printing the list.";
-        console.log(result);
-        return result;
-      }
+    }
+
+    if (temp == null) { // If we have reached the end of the list, print a message
+      const result = "Completed printing the list.";
+      console.log(result);
+      return result;
     }
   }
   
@@ -120,7 +120,7 @@ class SLinkedList {
 
     let prevNode = null;
 
-    while (currentNode != null){
+    while (currentNode !== null){
 
       nextNode = currentNode.next;
 
@@ -138,28 +138,23 @@ class SLinkedList {
     let count = 0;
 
     if(this.head == null){
-
-      console.log("Empty List");
-
-      return;
-
+      const result = "Empty List";
+      console.log(result);
+      return result;
     }
 
     let currentNode = this.head;
 
-    while(currentNode.next != null){
+    while(currentNode !== null){
 
       currentNode = currentNode.next;
 
       count++;
 
     }
-    count++;
 
-    const result = "The total number of nodes in the given list is: " + count;
-
+    const result = `The total number of nodes in the given list is: ${count}`;
     console.log(result);
-
     return result;
 
   }
