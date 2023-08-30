@@ -20,7 +20,6 @@ class SinglyLinkedList {
 
     if (arr.length === 0) {
       const result = "Provided Array is a Empty Array";
-      console.log(result);
       return result;
     }
 
