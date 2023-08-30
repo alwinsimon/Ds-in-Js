@@ -79,6 +79,8 @@ class Stack{
       let poppedValue = this.top.data; // Store the popped value.
       
       this.top = this.top.next;
+
+      console.log(`Popped ${poppedValue} from Stack.`);
       
       return poppedValue; // Return the popped value.
 
