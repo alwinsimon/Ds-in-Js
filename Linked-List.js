@@ -86,7 +86,9 @@ class SLinkedList {
     }
     
     if (temp == null) { // If the data was not found, return
-      return;
+      const result = "Target Data not found in the list."
+      console.log(result);
+      return result;
     }
     
     // If the tail node contains the data to be deleted, update the tail and return
@@ -96,8 +98,12 @@ class SLinkedList {
       return;
     }
     
-    // Remove the node with given data by updating the next reference of the previous node
+    /*
+      If a Node in the list which is not head or not tail and has the target data to delete.
+      Remove the node with target data by updating the next reference of the previous node.
+    */
     prev.next = temp.next;
+
   }
 
   // Method to reverse a linked list
