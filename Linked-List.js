@@ -172,10 +172,10 @@ list2.addNode(200);
 list2.addNode(300);
 list2.addNode(400);
 
-// // Display the Second list
+// Display the Second list
 // list2.display();
 
-// // Delete a node from the first linked list
+// Delete a node from the first linked list
 
 // list2.deleteNode(300);  // Deleting the node with the value 300
 
