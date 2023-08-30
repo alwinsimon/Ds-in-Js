@@ -2,75 +2,75 @@
 
 function heapSort(arr) {
 
-    // Build Max Heap
-    for (let i = Math.floor(arr.length / 2) - 1; i >= 0; i--) {
+  // Build Max Heap
+  for (let i = Math.floor(arr.length / 2) - 1; i >= 0; i--) {
 
-      heapify(arr, i, arr.length);
+    heapify(arr, i, arr.length);
 
-    }
-  
-    // Heap Sort
-    for (let i = arr.length - 1; i > 0; i--) {
+  }
 
-      // Swap the root element (max value) with the last element
-      [arr[0], arr[i]] = [arr[i], arr[0]];
-      
-      // Heapify the reduced heap
-      heapify(arr, 0, i);
+  // Heap Sort
+  for (let i = arr.length - 1; i > 0; i--) {
 
-    }
-  
-    return arr;
+    // Swap the root element (max value) with the last element
+    [arr[0], arr[i]] = [arr[i], arr[0]];
+    
+    // Heapify the reduced heap
+    heapify(arr, 0, i);
+
+  }
+
+  return arr;
 
 }
   
 function heapify(arr, rootIndex, size) {
 
-    let largestIndex = rootIndex;
+  let largestIndex = rootIndex;
 
-    let leftChildIndex = 2 * rootIndex + 1;
+  let leftChildIndex = 2 * rootIndex + 1;
 
-    let rightChildIndex = 2 * rootIndex + 2;
-  
-    if (leftChildIndex < size && arr[leftChildIndex] > arr[largestIndex]) {
+  let rightChildIndex = 2 * rootIndex + 2;
 
-      largestIndex = leftChildIndex;
+  if (leftChildIndex < size && arr[leftChildIndex] > arr[largestIndex]) {
 
-    }
-  
-    if (rightChildIndex < size && arr[rightChildIndex] > arr[largestIndex]) {
+    largestIndex = leftChildIndex;
 
-      largestIndex = rightChildIndex;
+  }
 
-    }
-  
-    if (largestIndex !== rootIndex) {
+  if (rightChildIndex < size && arr[rightChildIndex] > arr[largestIndex]) {
 
-      // Swap the root with the largest element
-      [arr[rootIndex], arr[largestIndex]] = [arr[largestIndex], arr[rootIndex]];
-  
-      // Recursively heapify the affected sub-tree
-      heapify(arr, largestIndex, size);
+    largestIndex = rightChildIndex;
 
-    }
+  }
+
+  if (largestIndex !== rootIndex) {
+
+    // Swap the root with the largest element
+    [arr[rootIndex], arr[largestIndex]] = [arr[largestIndex], arr[rootIndex]];
+
+    // Recursively heapify the affected sub-tree
+    heapify(arr, largestIndex, size);
+
+  }
 
 }
   
 function findLargestThree(arr) {
 
-    let sortedArr = heapSort(arr);
+  let sortedArr = heapSort(arr);
 
-    let len = sortedArr.length;
-    
-    if (len < 3) {
+  let len = sortedArr.length;
+  
+  if (len < 3) {
 
-      return sortedArr;
+    return sortedArr;
 
-    } else {
+  } else {
 
-      return [sortedArr[len - 1], sortedArr[len - 2], sortedArr[len - 3]];
+    return [sortedArr[len - 1], sortedArr[len - 2], sortedArr[len - 3]];
 
-    }
+  }
 
 }
   
