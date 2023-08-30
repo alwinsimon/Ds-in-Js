@@ -1,25 +1,17 @@
 // Define a Node class to represent each node in the binary search tree
 class Node {
-
     constructor(data) {
-
       this.data = data;
-
       this.left = null;
-
       this.right = null;
-
     }
-
 }
   
 // Define the BinarySearchTree class to represent the binary search tree
 class BinarySearchTree {
 
     constructor() {
-
         this.root = null;
-
     }
 
     // Insertion function to add a new node to the binary search tree
