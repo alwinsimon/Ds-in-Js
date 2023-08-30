@@ -34,7 +34,8 @@ class BinarySearchTree {
             while (true) {
 
                 if (data === current.data) {
-
+                    
+                    // If the given data is same as the current node data, then don't insert to avoid duplicates
                     return undefined;
 
                 }
