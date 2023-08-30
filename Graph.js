@@ -2,69 +2,69 @@
 
 class Graph {
 
-    constructor() {
+  constructor() {
 
-      this.vertices = [];
+    this.vertices = [];
 
-      this.edges = {};
+    this.edges = {};
 
-    }
-  
-    addVertex(vertex) {
+  }
 
-      this.vertices.push(vertex);
+  addVertex(vertex) {
 
-      this.edges[vertex] = [];
+    this.vertices.push(vertex);
 
-    }
-  
-    addEdge(vertex1, vertex2) {
+    this.edges[vertex] = [];
 
-      this.edges[vertex1].push(vertex2);
+  }
 
-      this.edges[vertex2].push(vertex1);
+  addEdge(vertex1, vertex2) {
 
-    }
-  
-    bfs(startVertex) {
+    this.edges[vertex1].push(vertex2);
 
-      const visited = {};
+    this.edges[vertex2].push(vertex1);
 
-      const queue = [];
-  
-      visited[startVertex] = true;
+  }
 
-      queue.push(startVertex);
-  
-      while (queue.length > 0) {
+  bfs(startVertex) {
 
-        const vertex = queue.shift();
-  
-        console.log(vertex);
-  
-        this.edges[vertex].forEach( (neighbor) => {if (!visited[neighbor]) {visited[neighbor] = true; queue.push(neighbor);}} );
+    const visited = {};
 
-      }
+    const queue = [];
+
+    visited[startVertex] = true;
+
+    queue.push(startVertex);
+
+    while (queue.length > 0) {
+
+      const vertex = queue.shift();
+
+      console.log(vertex);
+
+      this.edges[vertex].forEach( (neighbor) => {if (!visited[neighbor]) {visited[neighbor] = true; queue.push(neighbor);}} );
 
     }
-  
-    dfs(startVertex) {
 
-      const visited = {};
-  
-      const dfsHelper = (vertex) => {
+  }
 
-        visited[vertex] = true;
+  dfs(startVertex) {
 
-        console.log(vertex);
-  
-        this.edges[vertex].forEach((neighbor) => { if (!visited[neighbor]) { dfsHelper(neighbor); } } );
+    const visited = {};
 
-      };
-  
-      dfsHelper(startVertex);
+    const dfsHelper = (vertex) => {
 
-    }
+      visited[vertex] = true;
+
+      console.log(vertex);
+
+      this.edges[vertex].forEach((neighbor) => { if (!visited[neighbor]) { dfsHelper(neighbor); } } );
+
+    };
+
+    dfsHelper(startVertex);
+
+  }
 
 }
 
