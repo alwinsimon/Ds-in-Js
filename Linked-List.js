@@ -102,7 +102,7 @@ class SLinkedList {
       If a Node in the list which is not head or not tail and has the target data to delete.
       Remove the node with target data by updating the next reference of the previous node.
     */
-    prev.next = temp.next;
+    prev.next = temp.next; // This will delete the node after prev (ie, the node before temp) that has the target data to delete from the list.
 
   }
 
