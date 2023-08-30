@@ -1,40 +1,44 @@
+
+// Defining Node class
 class Node {
-    constructor(data) {
-      this.data = data;
-      this.next = null;
-    }
+  constructor(data) {
+    this.data = data;
+    this.next = null;
   }
+}
   
-  class SinglyLinkedList {
-    constructor() {
-      this.head = null;
-      this.tail = null;
-    }
-  
-    // =====================Methods=======================
-    
-    arrayToLinkedList(arr) {
-      if (arr.length === 0) {
-        console.log("Empty Array");
-        return;
-      }
-  
-      this.head = new Node(arr[0]);
-      let current = this.head;
-  
-      for (let i = 1; i < arr.length; i++) {
-        current.next = new Node(arr[i]);
-        current = current.next;
-      }
-  
-      this.tail = current;
-      return this.head;
-    }
+// Defining Singly Linked List class
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
   }
 
+  // =====================Methods=======================
   
-  // Create a new singly linked list
+  arrayToLinkedList(arr) {
 
+    if (arr.length === 0) {
+      const result = "Provided Array is a Empty Array";
+      console.log(result);
+      return result;
+    }
+
+    this.head = new Node(arr[0]);
+    let current = this.head;
+
+    for (let i = 1; i < arr.length; i++) {
+      current.next = new Node(arr[i]);
+      current = current.next;
+    }
+
+    this.tail = current;
+    return this.head;
+  }
+}
+
+  
+// Create a new singly linked list
 const myList = new SinglyLinkedList();
 
 // Test the arrayToLinkedList method
