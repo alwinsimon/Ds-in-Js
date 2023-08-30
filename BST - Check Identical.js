@@ -1,5 +1,3 @@
-// Code from Senior
-
 // Javascript program to check if two BSTs Are Identical BST node
 class Node {
 
