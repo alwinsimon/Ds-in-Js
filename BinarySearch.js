@@ -3,7 +3,7 @@ function orderAgnosticBinarySearch(array,target){
     let start = 0;
     let end = array.length - 1;
 
-    if(array[0] <= array[end]){
+    if(array[0] <= array[end]){ // Array is sorted in Ascending Order
 
         while(start <= end){
 
@@ -11,9 +11,10 @@ function orderAgnosticBinarySearch(array,target){
     
             if(array[mid] == target){
     
-                console.log(mid);
-    
-                return mid;
+                // If the element is present in the Array
+                const result = `The given target element is present in index ${mid} of the provided array.`;
+
+                return result;
     
             }else if(target < array[mid]){
     
@@ -26,14 +27,13 @@ function orderAgnosticBinarySearch(array,target){
             }
     
         }
-        // If the element is not present in the Array
-        // Console log after the While loop
-
-        console.log("The given element is not present in the array");
-
-        return -1;
         
-    }else{
+        // If the element is not present in the Array
+        const result = `The given element: ${target} is not present in the provided array.`;
+
+        return result;
+        
+    }else{ // Array is sorted in Descending Order
 
         while(start <= end){
 
@@ -41,9 +41,10 @@ function orderAgnosticBinarySearch(array,target){
 
             if(array[mid] == target){
 
-                console.log(mid);
+                // If the element is present in the Array
+                const result = `The given target element is present in index ${mid} of the provided array.`;
 
-                return mid;
+                return result;
 
             }else if(target < array[mid]){
 
@@ -58,11 +59,9 @@ function orderAgnosticBinarySearch(array,target){
         }    
         
         // If the element is not present in the Array
-        // Console log after the While loop
-    
-        console.log("The given element is not present in the array");
+        const result = `The given element: ${target} is not present in the provided array.`;
 
-        return -1;
+        return result;
 
     }
 
@@ -71,5 +70,6 @@ function orderAgnosticBinarySearch(array,target){
 let arr1 = [10,20,30,40,50,60];
 let arr2 = [60,50,40,30,20,10];
 
-let result = orderAgnosticBinarySearch(arr1,50);
-console.log(result);
+const resultOfSearch = orderAgnosticBinarySearch(arr1,50);
+
+console.log(resultOfSearch);
