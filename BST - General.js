@@ -2,13 +2,9 @@
 class Node {
 
     constructor(data) {
-
       this.data = data;
-
       this.left = null;
-
       this.right = null;
-
     }
 
 }
@@ -17,9 +13,7 @@ class Node {
 class BinarySearchTree {
 
     constructor() {
-
         this.root = null;
-
     }
 
     // Insertion function to add a new node to the binary search tree
