@@ -37,8 +37,9 @@ class SLinkedList {
   display() {
     // If the list is empty, print a message and return
     if (this.head == null) {
-      console.log("List is Empty");
-      return;
+      const result = "List is Empty.";
+      console.log(result);
+      return result;
     }
     
     let temp = this.head; // Start from the head node
@@ -48,7 +49,9 @@ class SLinkedList {
       temp = temp.next; // Move to the next node
       
       if (temp == null) { // If we have reached the end of the list, print a message
-        console.log("Completed printing the list");
+        const result = "Completed printing the list.";
+        console.log(result);
+        return result;
       }
     }
   }
@@ -57,18 +60,23 @@ class SLinkedList {
 
   deleteNode(data) {
 
+    // If the list is empty
+    if (this.head == null) {
+      this.tail = null; // Update the tail as there are no nodes left
+      const result = "List is Empty.";
+      console.log(result);
+      return result;
+    }
+
     let temp = this.head; // Start from the head node
     let prev = null; // Initialize a variable to keep track of the previous node
     
     // If the head node itself contains the data to be deleted, update the head and return
     if (temp != null && temp.data == data) {
       this.head = temp.next;
-      return;
-    }
-    
-    if (this.head == null) {
-      // If the list is empty, return
-      this.tail = null; // Update the tail as well since there are no nodes left
+      const result = "Deleted head of the list.";
+      console.log(result);
+      return result;
     }
     
     // Iterate through the list to find the node with given data
@@ -83,7 +91,7 @@ class SLinkedList {
     
     // If the tail node contains the data to be deleted, update the tail and return
     if (temp == this.tail) {
-      this.tail  = prev;
+      this.tail = prev;
       this.tail.next = null;
       return;
     }
@@ -94,59 +102,61 @@ class SLinkedList {
 
   // Method to reverse a linked list
 
-    reverseLinkedList() {
-        
-        let currentNode = this.head;
+  reverseLinkedList() {
+      
+    let currentNode = this.head;
 
-        this.head = this.tail;
+    this.head = this.tail;
 
-        this.tail = currentNode;
+    this.tail = currentNode;
 
-        let nextNode = null;
+    let nextNode = null;
 
-        let prevNode = null;
+    let prevNode = null;
 
-        while (currentNode != null){
+    while (currentNode != null){
 
-            nextNode = currentNode.next;
+      nextNode = currentNode.next;
 
-            currentNode.next = prevNode;
+      currentNode.next = prevNode;
 
-            prevNode = currentNode;
+      prevNode = currentNode;
 
-            currentNode = nextNode;
-        }
+      currentNode = nextNode;
+    }
+
+  }
+
+  countNodes(){
+
+    let count = 0;
+
+    if(this.head == null){
+
+      console.log("Empty List");
+
+      return;
 
     }
 
-    countNodes(){
+    let currentNode = this.head;
 
-        let count = 0;
+    while(currentNode.next != null){
 
-        if(this.head == null){
+      currentNode = currentNode.next;
 
-            console.log("Empty List");
-
-            return;
-
-        }
-
-        let currentNode = this.head;
-
-        while(currentNode.next != null){
-
-            currentNode = currentNode.next;
-
-            count++;
-
-        }
-        count++;
-
-        let result = "The total number of nodes in the given list is: " + count;
-
-        return result;
+      count++;
 
     }
+    count++;
+
+    const result = "The total number of nodes in the given list is: " + count;
+
+    console.log(result);
+
+    return result;
+
+  }
 
 }
 
