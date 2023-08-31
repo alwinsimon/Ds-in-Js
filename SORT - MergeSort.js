@@ -47,7 +47,7 @@ function merge(arr, lowIndex, mid, highIndex) {
 
   }
 
-  // if elements on the left half are still left //
+  // If there are elements remaining on the Left half //
   while (left <= mid) {
 
     temp.push(arr[left]);
@@ -56,7 +56,7 @@ function merge(arr, lowIndex, mid, highIndex) {
 
   }
 
-  // if elements on the right half are still left //
+  // If there are elements remaining on the Right half //
   while (right <= highIndex) {
 
     temp.push(arr[right]);
@@ -65,7 +65,7 @@ function merge(arr, lowIndex, mid, highIndex) {
 
   }
 
-  // transfering all elements from temporary to arr //
+  // Transferring all elements from temporary to arr //
   for (let i = lowIndex; i <= highIndex; i++) {
 
     arr[i] = temp[i - lowIndex];
