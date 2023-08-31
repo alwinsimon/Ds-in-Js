@@ -31,19 +31,19 @@ function merge(arr, lowIndex, mid, highIndex) {
   //storing elements in the temporary array in a sorted manner//
   while (left <= mid && right <= highIndex) {
 
-  if (arr[left] <= arr[right]) {
+    if (arr[left] <= arr[right]) {
 
-    temp.push(arr[left]);
+      temp.push(arr[left]);
 
-    left++;
+      left++;
 
-  } else {
+    } else {
 
-    temp.push(arr[right]);
+      temp.push(arr[right]);
 
-    right++;
+      right++;
 
-  }
+    }
 
   }
 
