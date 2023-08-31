@@ -40,6 +40,8 @@ function partition(arr, lowIndex, highIndex) {
 
 let arr1 = [5, 9, 2, 65, 5];
 
+console.log("Unsorted Array", arr1);
+
 quickSort(arr1);
 
-console.log(arr1);
+console.log("Sorted Array", arr1);
